@@ -1,0 +1,15 @@
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.AccesoDatos\bin\Debug\Axsis.AccesoDatos.dll.config
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.AccesoDatos\bin\Debug\Axsis.AccesoDatos.dll
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.AccesoDatos\bin\Debug\Axsis.AccesoDatos.pdb
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.AccesoDatos\bin\Debug\Axsis.Entity.dll
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.AccesoDatos\bin\Debug\EntityFramework.dll
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.AccesoDatos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.AccesoDatos\bin\Debug\Axsis.Entity.pdb
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.AccesoDatos\bin\Debug\Axsis.Entity.dll.config
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.AccesoDatos\bin\Debug\EntityFramework.xml
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.AccesoDatos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.AccesoDatos\obj\Debug\Axsis.AccesoDatos.csprojAssemblyReference.cache
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.AccesoDatos\obj\Debug\Axsis.AccesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.AccesoDatos\obj\Debug\Axsis.AccesoDatos.csproj.CopyComplete
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.AccesoDatos\obj\Debug\Axsis.AccesoDatos.dll
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.AccesoDatos\obj\Debug\Axsis.AccesoDatos.pdb

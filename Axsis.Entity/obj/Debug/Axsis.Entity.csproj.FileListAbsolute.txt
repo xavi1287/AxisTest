@@ -1,0 +1,12 @@
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.Entity\bin\Debug\Axsis.Entity.dll.config
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.Entity\bin\Debug\Axsis.Entity.dll
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.Entity\bin\Debug\Axsis.Entity.pdb
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.Entity\bin\Debug\EntityFramework.dll
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.Entity\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.Entity\bin\Debug\EntityFramework.xml
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.Entity\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.Entity\obj\Debug\Axsis.Entity.csprojAssemblyReference.cache
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.Entity\obj\Debug\Axsis.Entity.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.Entity\obj\Debug\Axsis.Entity.csproj.CopyComplete
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.Entity\obj\Debug\Axsis.Entity.dll
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.Entity\obj\Debug\Axsis.Entity.pdb

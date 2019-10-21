@@ -1,0 +1,6 @@
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.Entidad\bin\Debug\netstandard2.0\Axsis.Entidad.deps.json
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.Entidad\bin\Debug\netstandard2.0\Axsis.Entidad.dll
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.Entidad\obj\Debug\netstandard2.0\Axsis.Entidad.csprojAssemblyReference.cache
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.Entidad\obj\Debug\netstandard2.0\Axsis.Entidad.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.Entidad\obj\Debug\netstandard2.0\Axsis.Entidad.AssemblyInfoInputs.cache
+C:\Users\ADMIN\source\repos\AxsisTest\Axsis.Entidad\obj\Debug\netstandard2.0\Axsis.Entidad.AssemblyInfo.cs

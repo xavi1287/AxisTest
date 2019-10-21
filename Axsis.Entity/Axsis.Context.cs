@@ -18,6 +18,7 @@ namespace Axsis.Entity
         public AxsisEntities()
             : base("name=AxsisEntities")
         {
+            this.Configuration.ProxyCreationEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -9,7 +9,7 @@ using Axsis.Servicios.Models;
 
 namespace Axsis.Servicios.Controllers
 {
-    [RoutePrefix("api/autenticacion")]
+    [RoutePrefix("api/login")]
     
     public class LoginController : ApiController
     {
@@ -19,6 +19,7 @@ namespace Axsis.Servicios.Controllers
         /// <param name="loginRequest"></param>
         /// <returns></returns>
         [HttpPost]
+        [Route("login")]
         public IHttpActionResult Login(LoginRequest loginRequest)
         {
             #region Implementacion
@@ -29,7 +30,7 @@ namespace Axsis.Servicios.Controllers
                 if (loginRequest == null) throw new HttpResponseException(HttpStatusCode.BadRequest);
                 LoginResponse result = new LoginResponse();
                 var usuarioLogin =
-                    Logica.Logica.ObtenerUsuarioPorUsuarioContrasena(loginRequest.UserName, loginRequest.Contrasena);
+                    Logica.Logica.ObtenerUsuarioPorUsuarioContrasena(loginRequest.UserName, Seguridad.Seguridad.Encriptar( loginRequest.Contrasena));
                 if (usuarioLogin != null)
                 {
                     result.Usuario = usuarioLogin;
@@ -44,7 +45,7 @@ namespace Axsis.Servicios.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                throw new HttpResponseException (HttpStatusCode.BadRequest);
+                return ResponseMessage(new HttpResponseMessage { StatusCode = HttpStatusCode.BadRequest });
             }
 
             #endregion Implementacion

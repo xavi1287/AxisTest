@@ -12,9 +12,11 @@ namespace Axsis.Servicios.Controllers
 {
     [RoutePrefix("api/usuario")]
     [AllowAnonymous]
+
     public class UsuarioController : ApiController
     {
-
+        [HttpGet()]
+        [Route("obtenerSexo")]
         public IHttpActionResult ObtenerSexo()
         {
             #region Implementacion
@@ -41,6 +43,8 @@ namespace Axsis.Servicios.Controllers
         }
 
         // GET: api/Usuario
+        [HttpGet()]
+        [Route("obtenerusuarios")]
         public IHttpActionResult ObtenerUsuarios()
         {
             #region Implementacion
@@ -56,7 +60,7 @@ namespace Axsis.Servicios.Controllers
                 {
                     return ResponseMessage(new HttpResponseMessage { StatusCode = HttpStatusCode.NotFound });
                 }
-               
+
             }
             catch (Exception e)
             {
@@ -66,7 +70,9 @@ namespace Axsis.Servicios.Controllers
             #endregion Implementacion
         }
 
-                             // GET: api/Usuario/5
+        // GET: api/Usuario/5
+        [HttpGet()]
+        [Route("obtenerUsuario")]
         public IHttpActionResult ObtenerUsuarioId(long id)
         {
             #region Implementacion
@@ -92,6 +98,8 @@ namespace Axsis.Servicios.Controllers
             #endregion Implementacion
         }
 
+        [HttpGet()]
+        [Route("obtenerUsuarioCorreo")]
         public IHttpActionResult ObtenerUsuarioCorreoUsuario(Usuario usuario)
         {
             #region Implementacion
@@ -117,6 +125,7 @@ namespace Axsis.Servicios.Controllers
             #endregion Implementacion
         }
 
+        [HttpPost]
         // POST: api/Usuario
         public IHttpActionResult Post(Usuario usuario)
         {
@@ -147,6 +156,7 @@ namespace Axsis.Servicios.Controllers
         }
 
         // POST: api/Usuario
+        [HttpPost]
         public IHttpActionResult Actualizar(Usuario usuario)
         {
             #region Implementacion

@@ -14,11 +14,22 @@ namespace Axsis.AccesoDatos
 
         public static List<Sexo> ObtenerSexoTodos()
         {
+
             using (var ctx = new AxsisEntities())
             {
-                var lstUsuario = ctx.Sexo.ToList();
-                ctx.Dispose();
-                return lstUsuario;
+                try
+                {
+
+                    var lstUsuario = ctx.Sexo.ToList();
+                    ctx.Dispose();
+                    return lstUsuario;
+                }
+                catch (Exception e)
+                {
+                    ctx.Dispose();
+                    throw;
+                }
+
             }
         }
 

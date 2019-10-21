@@ -1,0 +1,47 @@
+<div class="login-wrapper">
+  <div class="container-center">
+    <div class="panel panel-bd">
+    <div class="panel-heading">
+      <div class="view-header">
+        <div class="header-icon">
+          <i class="fas fa-unlock-alt"></i>
+        </div>
+        <div class="header-title"><h3>Inicio de sesión</h3>
+        <small> <strong>Por favor ingrese sus credenciales</strong></small>
+        </div>
+      </div>
+    </div>
+    <div class="panel-body">
+      <mat-card-content>
+        <form id="login-form" #lForm="ngForm" [formGroup]="loginForm" (ngSubmit)="submitLogin()" autocomplete="off" novalidate>
+          <div class="form-group">
+            <mat-form-field [ngClass]="{'mat-input-invalid': submitted && error?.code == 1}" appearance="standard" style="width:100%;">
+              <i class="fas fa-user"></i><input matInput type="text" formControlName="userName" placeholder="Usuario" />
+              <mat-hint style="color: red;" *ngIf="submitted && error?.code == 1 && !loginForm.controls.userName.hasError('required')">{{error.message}}</mat-hint>
+              <mat-hint style="color: red;" *ngIf="submitted && loginForm.controls.userName.hasError('required')">Field is mandatory</mat-hint>
+            </mat-form-field>
+
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <mat-form-field [ngClass]="{'mat-input-invalid': submitted && error?.code == 2}" appearance="standard" style="width:100%;">
+                <i class="fas fa-key"></i>
+                <input matInput type="password" formControlName="password" placeholder="Contraseña" />
+                <mat-hint style="color: red;" *ngIf="submitted && error?.code == 2 && !loginForm.controls.password.hasError('required')">{{error.message}}</mat-hint>
+                <mat-hint style="color: red;" *ngIf="submitted && loginForm.controls.password.hasError('required')">Field is mandatory</mat-hint>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="form-group text-center">
+            <mat-card-actions>
+              <button mat-raised-button type="submit" form="login-form" class="btn-primary" [disabled]="lForm.invalid">Ingresar</button>
+            </mat-card-actions>
+          </div>
+        </form>
+      </mat-card-content>
+      <alert></alert>
+    </div>
+    </div>
+  </div>
+</div>
+

@@ -11,8 +11,34 @@ using Axsis.Servicios.Models;
 namespace Axsis.Servicios.Controllers
 {
     [RoutePrefix("api/usuario")]
+    [AllowAnonymous]
     public class UsuarioController : ApiController
     {
+
+        public IHttpActionResult ObtenerSexo()
+        {
+            #region Implementacion
+
+            try
+            {
+                var sexo = Logica.Logica.ObtenerSexoTodos();
+                if (sexo.Any())
+                {
+                    return Ok(sexo);
+                }
+                else
+                {
+                    return ResponseMessage(new HttpResponseMessage { StatusCode = HttpStatusCode.NotFound });
+                }
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
+            }
+            #endregion Implementacion
+        }
 
         // GET: api/Usuario
         public IHttpActionResult ObtenerUsuarios()
@@ -40,10 +66,7 @@ namespace Axsis.Servicios.Controllers
             #endregion Implementacion
         }
 
-
-
-
-        // GET: api/Usuario/5
+                             // GET: api/Usuario/5
         public IHttpActionResult ObtenerUsuarioId(long id)
         {
             #region Implementacion
@@ -114,6 +137,26 @@ namespace Axsis.Servicios.Controllers
                     return ResponseMessage(new HttpResponseMessage { StatusCode = HttpStatusCode.Conflict });
                 }
 
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
+            }
+            #endregion Implementacion
+        }
+
+        // POST: api/Usuario
+        public IHttpActionResult Actualizar(Usuario usuario)
+        {
+            #region Implementacion
+
+            try
+            {                
+                usuario.FechaModificacion = DateTime.Now;
+                LoginResponse result = new LoginResponse();
+                Logica.Logica.ActualizarUsuario(usuario);
+                return Ok(result.MensajeRespuesta = "Actualizado con exito!");               
             }
             catch (Exception e)
             {

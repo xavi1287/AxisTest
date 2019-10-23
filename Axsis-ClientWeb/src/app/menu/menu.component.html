@@ -1,18 +1,10 @@
+
 <div class="row">
   <div class="col-md-12">
-    <ngb-tabset>
-      <ngb-tab title="Lista Usuarios">
-        <ng-template ngbTabContent>
-        </ng-template>
-      </ngb-tab>
-      <ngb-tab title="Añadir Usuarios">
-        <ng-template ngbTabContent>
-        </ng-template>
-      </ngb-tab>
-      <ngb-tab title="Actualizar Usuarios">
-        <ng-template ngbTabContent>
-        </ng-template>
-      </ngb-tab>
-    </ngb-tabset>
+    <mat-tab-group>
+      <mat-tab label="Lista usuarios"> <app-lista-usuario></app-lista-usuario> </mat-tab>
+      <mat-tab label="Agrega usuario"> <app-crear-usuario> </app-crear-usuario> </mat-tab>
+      <mat-tab label="Actualiza usuario"> Content 3 </mat-tab>
+    </mat-tab-group>
   </div>
 </div>

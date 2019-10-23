@@ -135,16 +135,29 @@ namespace Axsis.Servicios.Controllers
             {
                 usuario.FechaCreacion=DateTime.Now;
                 usuario.FechaModificacion=DateTime.Now;
-                LoginResponse result= new LoginResponse(); 
-                var usuarios = Logica.Logica.InsertarUsuario(usuario);
-                if (usuarios != 0)
+                LoginResponse result= new LoginResponse();
+                var busquedausuario = Logica.Logica.ObtenerUsuarioPorCorreoUsuario(usuario.Email, usuario.Login);
+                if (busquedausuario==null)
                 {
-                    return Ok(result.MensajeRespuesta = "Guardado con exito!");
+                    var usuarios = Logica.Logica.InsertarUsuario(usuario);
+                    if (usuarios != 0)
+                    {
+                        result.Codigo = usuarios;
+                        result.MensajeRespuesta = "Guardado con exito!";
+                        return Ok(result);
+                    }
+                    else
+                    {
+                        return ResponseMessage(new HttpResponseMessage { StatusCode = HttpStatusCode.Conflict });
+                    }
                 }
                 else
                 {
-                    return ResponseMessage(new HttpResponseMessage { StatusCode = HttpStatusCode.Conflict });
+                    result.Codigo = -1;
+                    result.MensajeRespuesta = "Ya existe un usuario con el mismo email y login!";
+                    return Ok(result);
                 }
+                
 
             }
             catch (Exception e)
@@ -157,6 +170,7 @@ namespace Axsis.Servicios.Controllers
 
         // POST: api/Usuario
         [HttpPost]
+        [Route("actualizar")]
         public IHttpActionResult Actualizar(Usuario usuario)
         {
             #region Implementacion
@@ -166,7 +180,9 @@ namespace Axsis.Servicios.Controllers
                 usuario.FechaModificacion = DateTime.Now;
                 LoginResponse result = new LoginResponse();
                 Logica.Logica.ActualizarUsuario(usuario);
-                return Ok(result.MensajeRespuesta = "Actualizado con exito!");               
+                result.Codigo='0';
+                result.MensajeRespuesta = "Actualizado con exito!"
+                return Ok(result);               
             }
             catch (Exception e)
             {

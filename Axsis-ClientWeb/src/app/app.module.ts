@@ -20,6 +20,10 @@ import { LoginLayoutComponent } from './layouts/login-layout.component';
 import { HomeLayoutComponent } from './layouts/home_layout.component';
 import { Routing } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { LoaderComponent } from './core/vista/loader/loader.component';
+import { ListaUsuarioComponent } from './lista-usuario/lista-usuario.component';
+import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
+import { ActualizaUsuarioComponent } from './actualiza-usuario/actualiza-usuario.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +32,11 @@ import { HttpClientModule } from '@angular/common/http';
     MenuComponent,
     AlertComponent,
     LoginLayoutComponent,
-    HomeLayoutComponent
+    HomeLayoutComponent,
+    LoaderComponent,
+    ListaUsuarioComponent,
+    CrearUsuarioComponent,
+    ActualizaUsuarioComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +53,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatTabsModule,
     HttpClientModule
   ],
+
   providers: [LoaderService, LoaderInterceptorProvider],
   bootstrap: [AppComponent]
 })

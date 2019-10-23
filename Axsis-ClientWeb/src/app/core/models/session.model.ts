@@ -5,4 +5,5 @@ export class Session {
 }
 export class MensajeRespuesta {
   public mensajeRespuesta: string;
+  public usuario?: Usuario;
 }

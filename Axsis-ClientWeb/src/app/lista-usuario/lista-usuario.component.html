@@ -1,0 +1,46 @@
+<div class="wrapper">
+  <div class="content-wrapper" style="min-height: 872px;">
+    <section class="content-header">
+
+      <div class="header-title">
+        <h1>Lista de usuarios</h1>
+      </div>
+    </section>
+    <div class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-bd white">
+            <div class="panel-title">
+              <h4>Usuarios</h4>
+            </div>
+            <div class="panel-body">
+              <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                  <th scope="col">Login</th>
+                  <th scope="col">Correo</th>
+
+                  <th scope="col">Estado</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let usuario of usuarios">
+                  <th scope="row">{{ usuario.UsuarioId }}</th>
+                  <td>{{ usuario.login  }}</td>
+                  <td>{{ usuario.correo  }}</td>
+                  <td>{{ (usuario.estado ? "Activo" : "Inactivo")  }}</td>
+                  <td> <button class="btn btn-primary"><i class="fa fa-edit"></i></button> </td>
+                  <td> <button class="btn btn-primary" (click)="desactivarUsuario(usuario.UsuarioId);"><i class="fa fa-trash"></i></button> </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

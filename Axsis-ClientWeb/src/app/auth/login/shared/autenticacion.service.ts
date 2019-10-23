@@ -9,7 +9,7 @@ import { AppGlobal } from './../../../core/helper/app-global';
 })
 export class AutenticacionService {
 
-  private pathAuthenticate = 'authenticate/';
+  private pathAuthenticate = 'login/';
   private basePath: string;
   constructor(private httpClient: HttpClient, private varGlobal: AppGlobal) {
     this.basePath = varGlobal.baseApiPath + this.pathAuthenticate;

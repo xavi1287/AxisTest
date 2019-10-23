@@ -1,0 +1,69 @@
+<form id="login-form" #lForm="ngForm" [formGroup]="formGroup" (ngSubmit)="submitLogin()"  autocomplete="off" novalidate>
+  <div class="wrapper">
+    <div class="content-wrapper" style="min-height: 872px;">
+      <section class="content-header">
+
+        <div class="header-title">
+          <h1>Crear usuarios</h1>
+        </div>
+      </section>
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-bd white">
+
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="example-container">
+
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Email" [formControl]="emailFormControl"  >
+                        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                          Ingrese un email valido
+                        </mat-error>
+                        <mat-error *ngIf="emailFormControl.hasError('required')">
+                          Email es <strong>requerido</strong>
+                        </mat-error>
+                      </mat-form-field>
+                      <mat-form-field hintLabel="Minimo 7 carcateres">
+                        <input matInput   minlength="7" placeholder="Usuario" formControlName="login">
+
+                        <mat-hint align="end">{{login.value?.length || 0}}/7</mat-hint>
+                        <mat-error *ngIf="login.hasError('required')">Usuario requerida</mat-error>
+                        <mat-error *ngIf="login.hasError('minlength')">Usuario minimo {{minUser}} caracteres
+                          </mat-error>
+                      </mat-form-field>
+                      <mat-form-field hintLabel="Minimo 10 carcateres">
+                        <input matInput type="password" placeholder="Contraseña" formControlName="password"
+                          (input)="onPasswordInput()">
+                          <mat-hint align="end">{{password.value?.length || 0}}/7</mat-hint>
+                        <mat-error *ngIf="password.hasError('required')">Contraseña requerida</mat-error>
+                        <mat-error *ngIf="password.hasError('minlength')">Contraseña minimo {{minPw}} caracteres
+                        </mat-error>
+                      </mat-form-field>
+
+                      <mat-form-field>
+                        <input matInput type="password" placeholder="Confirma Contraseña" formControlName="password2"
+                          (input)="onPasswordInput()">
+                        <mat-error *ngIf="password2.hasError('required')">Confirme la contraseña</mat-error>
+                        <mat-error *ngIf="password2.invalid && !password2.hasError('required')">Las Contraseñas no
+                          coinciden</mat-error>
+                      </mat-form-field>
+                      <div class="form-group text-center">
+                          <mat-card-actions>
+                            <button mat-raised-button type="submit" form="login-form" class="btn-primary" [disabled]="lForm.invalid">Ingresar</button>
+                          </mat-card-actions>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</form>

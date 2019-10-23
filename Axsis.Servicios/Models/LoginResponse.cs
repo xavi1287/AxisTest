@@ -9,6 +9,8 @@ namespace Axsis.Servicios.Models
 {
     public class LoginResponse
     {
+        [JsonProperty("codigo")]
+        public long Codigo { get; set; }
         [JsonProperty("mensajeRespuesta")]
         public string MensajeRespuesta { get; set; }
         [JsonProperty("usuario")]

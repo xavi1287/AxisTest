@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
   private correctLogin(result: MensajeRespuesta) {
     // var data : Session ({token:tokenStr});
     if (result.mensajeRespuesta !== '') {
-      const data: Session = { mensajeRespuesta: result.mensajeRespuesta };
+      const data: Session = { mensajeRespuesta: result.mensajeRespuesta,usuario:result.usuario };
       this.storageService.setCurrentSession(data);
       this.router.navigate(['/home']);
 

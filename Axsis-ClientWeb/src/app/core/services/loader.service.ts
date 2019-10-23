@@ -8,6 +8,12 @@ import { BehaviorSubject } from 'rxjs';
 export class LoaderService {
 
   public isLoading = new BehaviorSubject(false);
+  isOpen = false;
 
+  @Output() cambio: EventEmitter<boolean> = new EventEmitter<boolean>();
   constructor() { }
+  toggle() {
+    this.isOpen = !this.isOpen;
+    this.cambio.emit(this.isOpen);
+  }
 }
